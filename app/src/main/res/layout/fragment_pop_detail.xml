@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".PopDetail">
+
+<!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/eventTitle"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:text="제목"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/eventContent"
+        android:layout_width="match_parent"
+        android:layout_height="199dp"
+        android:text="내용"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/userAddresss"
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:text="주소"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/userTel"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:text="연락처"
+        android:textSize="18sp" />
+</LinearLayout>
+
+

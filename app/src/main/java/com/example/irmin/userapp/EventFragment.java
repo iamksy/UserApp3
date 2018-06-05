@@ -1,12 +1,12 @@
 package com.example.irmin.userapp;
 
-import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
+import android.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +17,6 @@ import android.widget.SimpleAdapter;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -28,6 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+
 
 
 public class EventFragment extends Fragment {
@@ -48,6 +48,7 @@ public class EventFragment extends Fragment {
     SimpleDateFormat sdfNow = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     String strNow = sdfNow.format(new Date(now));
 
+
     ArrayList<HashMap<String, String>> eventList;
     ListView list;
     String myJSON;
@@ -55,7 +56,13 @@ public class EventFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        String userID = "123";
+        getActivity().setTitle("진행중인 이벤트");
+
+        SharedPreferences pref;
+        pref = this.getActivity().getSharedPreferences("sharedID", Context.MODE_PRIVATE);
+        String user_Id = pref.getString("sharedID","");
+
+        String userID = user_Id.toString();
 
         View view = inflater.inflate(R.layout.fragment_event, container, false);
         list = (ListView) view.findViewById(R.id.eventListView);
@@ -63,7 +70,7 @@ public class EventFragment extends Fragment {
 
         GetData task = new GetData();
         try {
-            task.execute("http://irmin95.cafe24.com/EventListNow.php?userID=" + URLEncoder.encode(userID,"UTF-8") + "&now=" + URLEncoder.encode(strNow,"UTF-8"));
+            task.execute("http://irmin95.cafe24.com/EventListNow.php?userID=" + URLEncoder.encode(userID,"UTF-8") + "&now=" +URLEncoder.encode(strNow,"UTF-8"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -78,10 +85,8 @@ public class EventFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                progressDialog = ProgressDialog.show(getContext(),
-                        "Please Wait", null, true, true);
-            }
+            progressDialog = ProgressDialog.show(getContext(),
+                    "Please Wait", null, true, true);
         }
 
         @Override

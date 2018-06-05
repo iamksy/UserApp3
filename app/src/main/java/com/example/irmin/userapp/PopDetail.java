@@ -63,7 +63,7 @@ public class PopDetail extends Fragment {
 
         GetData task = new GetData();
         try {
-            task.execute("http://irmin95.cafe24.com/Pop.php?userID=" + URLEncoder.encode(userID,"UTF-8") + "&now=" + URLEncoder.encode(strNow,"UTF-8"));
+            task.execute("http://irmin95.cafe24.com/poplist.php?userID=" + URLEncoder.encode(userID,"UTF-8") + "&now=" + URLEncoder.encode(strNow,"UTF-8"));
         } catch (Exception e) {
             e.printStackTrace();
         }

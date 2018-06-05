@@ -13,30 +13,36 @@
     <TextView
         android:id="@+id/eventTitle"
         android:layout_width="match_parent"
-        android:layout_height="49dp"
+        android:layout_height="81dp"
         android:text="제목"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/eventContent"
         android:layout_width="match_parent"
-        android:layout_height="199dp"
+        android:layout_height="166dp"
         android:text="내용"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/userAddress"
         android:layout_width="match_parent"
-        android:layout_height="93dp"
+        android:layout_height="86dp"
         android:text="주소"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/userTel"
         android:layout_width="match_parent"
-        android:layout_height="88dp"
+        android:layout_height="87dp"
         android:text="연락처"
         android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/cpbutton"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="쿠폰 받기" />
 </LinearLayout>
 
 

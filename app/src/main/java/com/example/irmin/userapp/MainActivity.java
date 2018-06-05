@@ -38,7 +38,7 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-   ListView ListView;
+ //  ListView ListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +46,15 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
 
-
-
-        ListView = (ListView) findViewById(R.id.eventListView);
-        ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               startActivity(new Intent(MainActivity.this,Pop.class));
-            }
-        });
+    //    ListView = (ListView) findViewById(R.id.eventListView);
+    //    ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+     //       @Override
+     //       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+     //          startActivity(new Intent(MainActivity.this,Pop.class));
+    //        }
+    //
+        //
+        //  });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
